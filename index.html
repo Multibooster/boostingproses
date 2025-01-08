@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Boost</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('progres.gif');
+            
+            
+        }
+
+        .loading-container {
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            
+            background-color: #00000080;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        h5 {
+          font-size: 16;
+          margin-bottom: 20px;
+          color: #ff0000;
+        }
+
+        .progress-bar-wrapper {
+            width: 100%;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background-color: #ffd700;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border-radius: 15px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .progress-text {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #ffd700;
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+
+    <div class="loading-container">
+      <img src="gear.gif" width="200" height="70">
+        <h2>LINK ON BOOSTING</h2>
+        <h5>" WARNING !! Dilarang melakukan boosting secara multi device tanpa persetujuan developer " </h5>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="progress-bar">0%</div>
+        </div>
+        <img src="signal.gif" width="25" height="25" align="right">
+        <div class="progress-text" id="progress-text">0% Processing 25% signal ...</div>
+        
+        <br>
+        <br>
+        <img src="speed.gif" align-items="center" width="270" height="90">
+        <br>
+        <br>
+        
+        <br>
+        
+    </div>
+    
+
+    <script>
+        // Simulasi loading
+        let progress = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        const interval = setInterval(() => {
+            if (progress < 100) {
+                progress += 1;
+                progressBar.style.width = progress + '%';
+                progressBar.textContent = progress + '%';
+                progressText.textContent = progress + '% Completed';
+            } else {
+                clearInterval(interval);
+                progressText.textContent = 'Sukses';
+            }
+        }, 25000);
+        
+        
+    </script>
+
+  
+
+
+
+</body>
+</html>
